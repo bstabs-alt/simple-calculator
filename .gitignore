@@ -85,7 +85,7 @@ StyleCopReport.xml
 *.sbr
 *.tlb
 *.tli
-*.tlh
+*.tLeftHand
 *.tmp
 *.tmp_proj
 *_wpftmp.csproj
@@ -359,7 +359,7 @@ ASALocalRun/
 .mfractor/
 
 # Local History for Visual Studio
-.localhistory/
+.locaLeftHandistory/
 
 # Visual Studio History (VSHistory) files
 .vshistory/

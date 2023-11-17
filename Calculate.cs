@@ -8,41 +8,44 @@ namespace simple_calculator
 
     public class Calculate
     {
-        private int lh;
-        private int rh;
-
-        public Calculate(int lh, int rh)
+        private readonly double LeftHand;
+        private readonly string Operator;
+        private readonly double RightHand;
+        public Calculate(Expression exp)
         {
-            this.lh = lh;
-            this.rh = rh;
+            LeftHand = exp.LeftHand;
+            Operator = exp.Operator;
+            RightHand = exp.RightHand;
         }
 
-        public int Add()
+        public double Solve()
         {
-            return lh + rh;
+            return Operator switch
+            {
+                "+" => Add(),
+                "-" => Minus(),
+                "*" => Multiply(),
+                "/" => Divide(),
+                _ => 0,
+            };
         }
+        private double Add() => LeftHand + RightHand;
+        private double Minus() => LeftHand - RightHand;
+        private double Multiply() => LeftHand * RightHand;
+        private double Divide() => DivideCatch();
 
-        public int Minus()
+        private double DivideCatch()
         {
-            return lh - rh;
-        }
-
-        public int Multiply()
-        {
-            var multiplied = 0;
-            for(int i = 0; i <= lh-1; i++){
-                multiplied += rh;
+            try
+            {
+                return LeftHand / RightHand;
             }
-            return multiplied;
-        }
-
-        public int Divide(){
-            // var divided = lh - rh;
-            // for(int i = 0; i <= lh-1; i++){
-            //     value ();
-            // }
-            // return divided;
-            return lh / rh;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Environment.Exit(1);
+                return 0;
+            }
         }
     }
 }
