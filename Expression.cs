@@ -12,7 +12,7 @@ namespace simple_calculator
         public Expression(string[] args)
         {
 
-            if ((args[0].Length >= 3) && args.Length < 3)
+            if ((args[0].Length >= 3) && args.Length == 1)
             {
                 string regex = @"[\+\-\*\/]";
                 string[] split = Regex.Split(args[0].ToString(), regex);
@@ -32,6 +32,7 @@ namespace simple_calculator
             else
             {
                 Console.WriteLine($"{args} is an incorrect expression ");
+                Environment.Exit(1);
             }
         }
 

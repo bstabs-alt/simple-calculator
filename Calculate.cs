@@ -26,7 +26,7 @@ namespace simple_calculator
                 "-" => Minus(),
                 "*" => Multiply(),
                 "/" => Divide(),
-                _ => 0,
+                _ => SolveEx(),
             };
         }
         private double Add() => LeftHand + RightHand;
@@ -40,12 +40,18 @@ namespace simple_calculator
             {
                 return LeftHand / RightHand;
             }
-            catch (Exception ex)
+            catch (DivideByZeroException ex)
             {
                 Console.WriteLine(ex.ToString());
                 Environment.Exit(1);
                 return 0;
             }
+        }
+        public double SolveEx()
+        {
+            Console.WriteLine("Incorrect Operator Used Exception");
+            Environment.Exit(1);
+            return 0;
         }
     }
 }
