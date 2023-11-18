@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,6 @@ namespace simple_calculator
                 LeftHand = Convert.ToDouble(split[0]);
                 Operator = op[0].ToString();
                 RightHand = Convert.ToDouble(split[1]);
-
             }
             else if ((args.Length == 3))
             {

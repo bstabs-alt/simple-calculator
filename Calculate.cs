@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 
 namespace simple_calculator
 {
-
     public class Calculate
     {
         private readonly double LeftHand;
